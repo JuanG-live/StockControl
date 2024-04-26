@@ -6,11 +6,11 @@
     <title>Crear Producto</title>
 </head>
 <body>
-    <form action="/compra/templates/crear_producto.html" method="post">
-        {{form.as_p}}
-    <button>
-            Guardar Producto
-    </button>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Create Product</button>
     </form>
+    <a href="{% url 'lista_producto'%}">Cancelar</a>
 </body>
 </html>

@@ -6,6 +6,11 @@
     <title>Crear Proveedor</title>
 </head>
 <body>
-    <h1>crear proveedor</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Create Proveedor</button>
+    </form>
+    <a href="{% url 'lista_proveedor'%}">Cancelar</a>
 </body>
 </html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Productos</title>
+</head>
+<body>
+    <h1>LISTA DE PRODUCTOS</h1>
+    <ul>    
+        {% for producto in productos %}
+        <li style="display: flex;">
+            <span>Nombre: {{ producto.nombre }}</span>
+            <span>Precio: {{ producto.precio }}</span>
+            <span>Cantidad: {{ producto.stock_actual }}</span>
+            <span>Proveedor: {{ producto.proveedor }}</span>
+
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
