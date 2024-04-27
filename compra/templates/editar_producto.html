@@ -6,6 +6,11 @@
     <title>Editar Producto</title>
 </head>
 <body>
-    
+    <form method="post" action="{% url 'editar_producto' producto.id %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Modificar Producto</button>
+    </form>
+    <a href="{% url 'lista_producto'%}" class=" "btn btn-danger>Volver a la lista</a>
 </body>
 </html>

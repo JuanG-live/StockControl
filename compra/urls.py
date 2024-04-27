@@ -8,8 +8,8 @@ urlpatterns = [
     path('crearProveedor/', crear_proveedor, name='crear_proveedor'),
     path('listaProducto/', mostrar_listaProducto, name='lista_producto'),
     path('listaProveedor/', mostrar_listaProveedor, name='lista_proveedor'),
-    path('editarProducto/<int:producto_id>/', update_producto, name='update_producto'),
-    path('editarProveedor/', mostrar_editarProveedor, name='editar_proveedor'),
-    path('eliminarProducto/', mostrar_eliminarProducto, name='eliminar_producto'),
-    path('eliminarProveedor/', mostrar_eliminarProveedor, name='eliminar_proveedor')
+    path('editarProducto/<int:producto_id>/', update_producto, name='editar_producto'),
+    path('editarProveedor/<int:proveedor_id>/', update_proveedor, name='editar_proveedor'),
+    path('eliminarProducto/<int:producto_id>/', eliminar_producto, name='eliminar_producto'),
+    path('eliminarProveedor/<int:proveedor_id>', eliminar_proveedor, name='eliminar_proveedor')
 ]
