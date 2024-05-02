@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion</title>
+</head>
+<body>
+    <nav>
+        <div>
+            <ul>
+                <li><a href="{% url 'inicio' %}">¿Cómo? ¿Qué?</a></li>
+                <li><a href="#">Producto</a></li>
+                <div class="dropdown-content">
+                    <li><a href="{% url 'crear_producto' %}">Ingresar Producto</a></li>
+                    <li><a href="{% url 'lista_producto' %}">Eliminar Producto</a></li>
+                </div>
+                <li><a href="">Proveedor</a></li>
+                <div class="dropdown-content">
+                    <li><a href="{% url 'crear_proveedor' %}">Ingresar Proveedor</a></li>
+                    <li><a href="{% url 'lista_proveedor' %}">Eliminar Proveedor</a></li>
+                </div>
+                <li><a href="">Admin</a></li>
+            </ul>
+        </div>
+    </nav>
+</body>
+</html>

@@ -16,7 +16,6 @@ def crear_producto(request):
     return render(request, 'crear_producto.html', {'form': form})
 
 def crear_proveedor(request):
-
     if request.method == 'POST':
         form = ProveedorForm(request.POST)
         if form.is_valid():
@@ -25,10 +24,14 @@ def crear_proveedor(request):
     else:
         form = ProveedorForm()
     return render(request, 'crear_proveedor.html', {'form': form})
+
 def mostrar_index(request):
     return render(request, 'index.html')
 
 #MOSTRAR
+def home(request):
+    return render(request, 'home.html', {'home': home})
+
 def mostrar_listaProducto(request):
     productos = Producto.objects.all()
     return render(request, 'lista_producto.html', {'productos': productos})
@@ -68,14 +71,14 @@ def eliminar_producto(request, producto_id):
     producto = get_object_or_404(Producto, id=producto_id)
     if request.method == 'POST':
         producto.delete()
-        return redirect(reverse('listado_producto'))
+        return redirect(reverse('lista_producto'))
     return render(request, 'eliminar_producto.html', {'producto': producto, 'activo': 'eliminar_producto'})
     
 def eliminar_proveedor(request, proveedor_id):
     proveedor = get_object_or_404(Proveedor, id=proveedor_id)
     if request.method == 'POST':
         proveedor.delete()
-        return redirect(reverse('listado_proveedor'))
+        return redirect(reverse('lista_proveedor'))
     return render(request, 'eliminar_proveedor.html', {'proveedor': proveedor, 'activo': 'eliminar_proveedor'})
 
 
