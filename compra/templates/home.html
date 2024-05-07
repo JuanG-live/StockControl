@@ -1,28 +1,42 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}" class="style">
     <title>Gestion</title>
 </head>
 <body>
-    <nav>
-        <div>
-            <ul>
-                <li><a href="{% url 'inicio' %}">¿Cómo? ¿Qué?</a></li>
-                <li><a href="#">Producto</a></li>
-                <div class="dropdown-content">
-                    <li><a href="{% url 'crear_producto' %}">Ingresar Producto</a></li>
-                    <li><a href="{% url 'lista_producto' %}">Eliminar Producto</a></li>
-                </div>
-                <li><a href="">Proveedor</a></li>
-                <div class="dropdown-content">
-                    <li><a href="{% url 'crear_proveedor' %}">Ingresar Proveedor</a></li>
-                    <li><a href="{% url 'lista_proveedor' %}">Eliminar Proveedor</a></li>
-                </div>
-                <li><a href="">Admin</a></li>
-            </ul>
-        </div>
-    </nav>
+    <header>
+        <nav class="nav-bar">
+            <div class="nav-bar-flex">
+                <ul>
+                    <li><a href="{% url 'inicio' %}">¿Cómo? ¿Qué?</a></li>
+                    <li class="dropdown">
+                        <a href="#">Producto</a>
+                        <div class="dropdown-content">
+                            <ul>
+                                <li><a href="{% url 'crear_producto' %}">Ingresar Producto</a></li>
+                                <li><a href="{% url 'lista_producto' %}">Eliminar Producto</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">Proveedor</a>
+                        <div class="dropdown-content">
+                            <ul>
+                                <li><a href="{% url 'crear_proveedor' %}">Ingresar Proveedor</a></li>
+                                <li><a href="{% url 'lista_proveedor' %}">Eliminar Proveedor</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="#">Admin</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
 </body>
+
 </html>
